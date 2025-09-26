@@ -1,6 +1,7 @@
 package com.example.firstapplication
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -12,13 +13,20 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            TextCard("gello world")
+            TextCard("check the logcat window")
         }
+
+        Log.i("logcat test", "information message")
+        Log.v("logcat test", "verbose message")
+        Log.w("logcat test", "warning message")
+        Log.e("logcat test", "error message")
+        Log.d("logcat test", "debug message")
+        Log.wtf("logcat test", "something went rly bad message")
     }
 }
 
 @Composable
-fun TextCard(to_display: String) {
-    Text(to_display)
+fun TextCard(toDisplay: String) {
+    Text(toDisplay)
 }
 
